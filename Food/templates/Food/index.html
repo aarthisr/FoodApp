@@ -1,0 +1,21 @@
+{% extends 'Food/base.html' %}
+{% block content %}
+    {% for item in item_list %}
+        <div class="row">
+            <div class="col-med-3 offset-md-2" style="width: 200px;">
+                <img class="card" width="200px" height="100px" src="{{ item.item_image }}"/>
+            </div>
+            <div class="col-med-4" style="width: 400px;">
+                <h3>{{ item.item_name }}</h3>
+                <h3>{{ item.item_desc }}</h3>
+                <h3>${{ item.item_price }}</h3>
+                <h5>......{{ item.user_name }}</h5>
+            </div>
+            <div class="col-med-2" style="width: 400px;">
+                <a class="btn btn-success" href="{% url 'Food:detail' item.id %}">Details</a>
+                <a class="btn btn-success" href="{% url 'Food:update_item' item.id %}">Edit</a>
+                <a class="btn btn-success" href="{% url 'Food:delete_item' item.id %}">Delete</a>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,12 @@
+body{
+    background-color: lightcoral;
+}
+.nav-item .nav-link {
+
+    color: yellow !important;
+}
+
+a{
+    padding: 10;
+}
+  
